@@ -17,7 +17,7 @@ public class Draggable : MonoBehaviour
     private float movementTime = 15f;
     private System.Nullable<Vector3> movementDst;
 
-    private bool isInit = false;
+    //private bool isInit = false;
 
     void Start()
     {
@@ -32,8 +32,8 @@ public class Draggable : MonoBehaviour
     {
         // Still ineffecient
         Vector2 size = ((RectTransform)transform).sizeDelta;
-        ((BoxCollider2D)_collider).size = new Vector2(size.x, size.y);
-        ((BoxCollider2D)_collider).offset = new Vector2(0, size.y / 3);
+        ((BoxCollider2D)_collider).size = new Vector2(size.x, size.y / 2); // change size
+        ((BoxCollider2D)_collider).offset = new Vector2(0 - (size.x / 2), size.y / 3); // change x y
     }
 
     void FixedUpdate()
@@ -66,7 +66,7 @@ public class Draggable : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Draggable collideDraggable = other.GetComponent<Draggable>();
+        //Draggable collideDraggable = other.GetComponent<Draggable>();
 
         //if(collideDraggable != null && dragController.LastDragged.gameObject == gameObject)
         //{
@@ -83,7 +83,7 @@ public class Draggable : MonoBehaviour
         }
         else
         {
-            movementDst = LastPosition;
+            movementDst = _initPosition;
         }
     }
 

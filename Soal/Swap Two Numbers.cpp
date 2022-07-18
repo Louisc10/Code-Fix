@@ -12,13 +12,11 @@ void swap(int , int ) {
 int main() {
 	int a = 2;
 	int b = 3;
-	printf("Before Swap\n");
-	printf("num1 : %d | num2 : %d\n", , );
 	
 	swap(, );
 	
-	printf("After Swap\n");
-	printf("num1 : %d | num2 : %d\n", , );
+	printf("a : %d\n", );
+	printf("b : %d\n", );
 	return 0;
 }
 
