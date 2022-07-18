@@ -15,6 +15,8 @@ public class Draggable : MonoBehaviour
     private float movementTime = 15f;
     private System.Nullable<Vector3> movementDst;
 
+    private Draggable collideDraggable;
+
     void Start()
     {
         _collider = GetComponent<Collider2D>();
@@ -41,13 +43,18 @@ public class Draggable : MonoBehaviour
                 transform.position = Vector3.Lerp(transform.position, movementDst.Value, movementTime * Time.fixedDeltaTime);
             }
         }
+
+        if (dragController.LastDragged?.gameObject == gameObject)
+        {
+            movementDst = LastPosition;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Draggable collideDraggable = other.GetComponent<Draggable>();
+        collideDraggable = other.GetComponent<Draggable>();
 
-        if(collideDraggable != null && dragController.LastDragged?.gameObject == gameObject)
+        if(collideDraggable != null && dragController.LastDragged.gameObject == gameObject)
         {
             ColliderDistance2D colliderDistance2D = other.Distance(_collider);
             Vector3 diff = new Vector3(colliderDistance2D.normal.x, colliderDistance2D.normal.y);
@@ -56,13 +63,15 @@ public class Draggable : MonoBehaviour
             Debug.Log(diff);
 
             transform.position -= diff;
+
+            collideDraggable = null;
         }
 
         if (other.CompareTag("DropValid"))
         {
             movementDst = other.transform.position;
         }
-        else if (other.CompareTag("DropInvalid"))
+        else
         {
             movementDst = LastPosition;
         }
