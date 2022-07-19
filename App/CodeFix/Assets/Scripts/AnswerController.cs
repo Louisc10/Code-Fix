@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AnswerController : MonoBehaviour
 {
-    public Answer[] questions;
-    public Answer[] answers;
+    public DndModel[] questions;
+    public DndModel[] answers;
     // Start is called before the first frame update
     
-    private Answer GetAnswer(GameObject gameObject)
+    private DndModel GetAnswer(GameObject gameObject)
     {
         for(int i = 0; i < answers.Length; i++)
         {
@@ -20,7 +20,7 @@ public class AnswerController : MonoBehaviour
         return null;
     }
 
-    private Answer GetQuestion(GameObject gameObject)
+    private DndModel GetQuestion(GameObject gameObject)
     {
         for (int i = 0; i < questions.Length; i++)
         {
@@ -32,10 +32,10 @@ public class AnswerController : MonoBehaviour
         return null;
     }
 
-    public void CheckAnswer(GameObject answer, GameObject question)
+    public void CheckAnswer(GameObject DndModel, GameObject question)
     {
-        Answer qst = GetQuestion(question);
-        int answerValue = GetAnswer(answer).value;
+        DndModel qst = GetQuestion(question);
+        int answerValue = GetAnswer(DndModel).value;
         int questionValue = qst.value;
 
         if(answerValue == questionValue)
