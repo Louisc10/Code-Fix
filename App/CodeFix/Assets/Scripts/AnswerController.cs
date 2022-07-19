@@ -6,8 +6,14 @@ public class AnswerController : MonoBehaviour
 {
     public DndModel[] questions;
     public DndModel[] answers;
+    private LevelMenu levelController;
     // Start is called before the first frame update
-    
+
+    private void Awake()
+    {
+        levelController = FindObjectOfType<LevelMenu>();
+    }
+
     private DndModel GetAnswer(GameObject gameObject)
     {
         for(int i = 0; i < answers.Length; i++)
@@ -48,8 +54,8 @@ public class AnswerController : MonoBehaviour
         }
     }
 
+    bool flag = true;
     public void validate(){
-        bool flag = true;
         foreach (var item in questions)
         {
             if(!item.isCorrect){
@@ -105,6 +111,10 @@ public class AnswerController : MonoBehaviour
         if (GUI.Button(new Rect(50, 200, 200, 50), "OK", style))
         {
             isCorrect = false;
+            if(flag)
+            {
+                levelController.CompleteLevel();
+            }
         }
     }
 }
