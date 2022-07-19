@@ -1328,7 +1328,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28b96e0bfe6615d46a5a97e5c3133038, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questions: []
+  questions:
+  - gameObject: {fileID: 232171082}
+    value: '"Hello World"'
 --- !u!4 &570889668
 Transform:
   m_ObjectHideFlags: 0
