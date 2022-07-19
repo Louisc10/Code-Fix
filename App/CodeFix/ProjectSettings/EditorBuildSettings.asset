@@ -26,4 +26,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameScene C5.unity
     guid: 60379e210a42038418b8696b86de2bb0
+  - enabled: 1
+    path: Assets/Scenes/JavaLevel1.unity
+    guid: 6e4a8eea6b9e3204fab14eb60dd1ab90
+  - enabled: 1
+    path: Assets/Scenes/JavaLevel2.unity
+    guid: f30c89c240f527747be1f0cff2909985
+  - enabled: 1
+    path: Assets/Scenes/JavaLevel3.unity
+    guid: af60cdf02e664254cbcdfdb8eaa2f45a
+  - enabled: 1
+    path: Assets/Scenes/JavaLevel4.unity
+    guid: 568b128561de6da459e0d748ebc5cbd5
+  - enabled: 1
+    path: Assets/Scenes/JavaLevel5.unity
+    guid: eadc7a50bede2e14291004c65e891b1b
   m_configObjects: {}

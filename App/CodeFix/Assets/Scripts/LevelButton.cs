@@ -17,8 +17,18 @@ public class LevelButton : MonoBehaviour
     void Start()
     {
         // Not dynamic yet, bcs its deadline day lol
-        textUI.text = ((index % 5) + 1) + "";
+        textUI.text = index % 5 == 0 ? 5 + "" : ((index % 5)) + "";
+        LevelMenu menu = FindObjectOfType<LevelMenu>();
 
+        if(menu.completeLevel == index)
+        {
+            isCompleted = true;
+            menu.completeLevel = -1;
+        }
+    }
+
+    public void CheckLevelComplete()
+    {
         if (isCompleted)
         {
             overlay.SetActive(true);

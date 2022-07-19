@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class LevelData
 {
     public bool[] levelsCompleted;
@@ -18,6 +19,6 @@ public class LevelData
 
     public void LevelCompleted(int index)
     {
-        levelsCompleted[index] = true;
+        levelsCompleted[index-1] = true;
     }
 }

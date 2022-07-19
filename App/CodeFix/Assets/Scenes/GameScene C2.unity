@@ -1158,7 +1158,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\t              a = 8.83;"
+  m_Text: "\t              a = 8;"
 --- !u!222 &684664234
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1623,7 +1623,7 @@ GameObject:
   - component: {fileID: 902100385}
   - component: {fileID: 902100387}
   m_Layer: 0
-  m_Name: ValidBlock double
+  m_Name: ValidBlock int
   m_TagString: DropValid
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3067,11 +3067,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 697349499259200580, guid: 2b6965c84d8783b43b9f9d0c7fa40c1e, type: 3}
       propertyPath: answers.Array.data[0].value
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 697349499259200580, guid: 2b6965c84d8783b43b9f9d0c7fa40c1e, type: 3}
       propertyPath: answers.Array.data[1].value
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 697349499259200580, guid: 2b6965c84d8783b43b9f9d0c7fa40c1e, type: 3}
       propertyPath: answers.Array.data[2].value

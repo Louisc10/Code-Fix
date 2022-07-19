@@ -17,19 +17,22 @@ public static class SaveSystem
     public static LevelData LoadData()
     {
         string path = Application.persistentDataPath + "/level.data";
+
         if (File.Exists(path))
         {
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
             LevelData data = formatter.Deserialize(stream) as LevelData;
+
             stream.Close();
+
 
             return data;
         }
         else
         {
-            Debug.LogError("Save file not found in " + path);
+            Debug.LogWarning("Save file not found in " + path);
             return new LevelData(new bool[10]);
         }
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AnswerController : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class AnswerController : MonoBehaviour
     private LevelMenu levelController;
     // Start is called before the first frame update
 
-    private void Awake()
+    private void Start()
     {
         levelController = FindObjectOfType<LevelMenu>();
     }
