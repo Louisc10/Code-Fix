@@ -1,58 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using System;
 
-public class AnswerController : MonoBehaviour
+public class FillAnswerController : MonoBehaviour
 {
-    public DndModel[] questions;
-    public DndModel[] answers;
-    // Start is called before the first frame update
-    
-    private DndModel GetAnswer(GameObject gameObject)
-    {
-        for(int i = 0; i < answers.Length; i++)
-        {
-            if(answers[i].gameObject == gameObject)
-            {
-                return answers[i];
-            }
-        }
-        return null;
-    }
-
-    private DndModel GetQuestion(GameObject gameObject)
-    {
-        for (int i = 0; i < questions.Length; i++)
-        {
-            if (questions[i].gameObject == gameObject)
-            {
-                return questions[i];
-            }
-        }
-        return null;
-    }
-
-    public void CheckAnswer(GameObject DndModel, GameObject question)
-    {
-        DndModel qst = GetQuestion(question);
-        int answerValue = GetAnswer(DndModel).value;
-        int questionValue = qst.value;
-
-        if(answerValue == questionValue)
-        {
-            qst.isCorrect = true;
-        }
-        else
-        {
-            qst.isCorrect = false;
-        }
-    }
+    public FillModel[] questions;
 
     public void validate(){
         bool flag = true;
         foreach (var item in questions)
         {
-            if(!item.isCorrect){
+
+            Debug.Log(String.Compare(item.gameObject.GetComponent<TMP_InputField>().text, item.value));
+            if(String.Compare(item.gameObject.GetComponent<TMP_InputField>().text, item.value) != 0){
                 flag = false;
                 break;
             }
@@ -66,11 +28,6 @@ public class AnswerController : MonoBehaviour
             labelMessage = "You fix the code!!! :)" ;
         }
         OnGUI();
-    }
-
-    public void reset(GameObject question)
-    {
-        GetQuestion(question).isCorrect = false;
     }
 
     private string labelMessage;

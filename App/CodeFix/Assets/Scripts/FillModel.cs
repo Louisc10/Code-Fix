@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Answer
+public class FillModel
 {
     public GameObject gameObject;
-    public int value;
-    public bool isCorrect = false;
+    public string value;
 }
