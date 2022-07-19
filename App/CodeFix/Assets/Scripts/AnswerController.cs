@@ -52,8 +52,6 @@ public class AnswerController : MonoBehaviour
         bool flag = true;
         foreach (var item in questions)
         {
-            Debug.Log(item.gameObject.transform.position);
-            Debug.Log(item.value);
             if(!item.isCorrect){
                 flag = false;
                 break;
