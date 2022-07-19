@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DragController : MonoBehaviour
 {
+    public AnswerController ans;
     public Draggable LastDragged => lastDragged;
 
     // Check if user is dragging
@@ -24,6 +25,11 @@ public class DragController : MonoBehaviour
         {
             Destroy(gameObject); 
         }
+    }
+
+    private void Start()
+    {
+        ans = FindObjectOfType<AnswerController>();
     }
 
     // Update is called once per frame
